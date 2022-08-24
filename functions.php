@@ -27,7 +27,7 @@ function watcherldn_theme_scripts()
 {
     wp_enqueue_style('style', get_stylesheet_uri());
     wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css');
-    wp_enqueue_style('all-css', get_template_directory_uri() . '/assets/css/all.css');
+    wp_enqueue_style('main-css', get_template_directory_uri() . '/assets/sass/main.css');
     wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js');
     wp_enqueue_script('jquery');
     wp_register_script('loadmore_script', get_stylesheet_directory_uri() . '/assets/js/ajax.js', array('jquery'));

@@ -1,0 +1,39 @@
+@import "color";
+@import "mixin";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 10rem;
+}
+
+.watcher-navbar {
+    .watcher-desktop-nav {
+        margin-right: 140px;
+        margin-left: 140px;
+    }
+
+    .menu-main-menu-container {
+
+        #menu-main-menu {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            li {
+                list-style-type: none;
+                
+                a {
+                    margin-left: 3rem;
+                    text-decoration: none;
+                }
+            }
+            
+        }
+    }
+}

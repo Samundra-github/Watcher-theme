@@ -15,3 +15,26 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+    <!-- Navigation Menu -->
+
+    <nav class="watcher-navbar">
+        <!-- Desktop Nav -->
+        <div class="watcher-desktop-nav">
+            <div class="d-flex justify-content-between align-items-center">
+                <?php
+                if (function_exists('the_custom_logo')) {
+                    the_custom_logo();
+                } else {
+                    echo "Watcher";
+                }
+                ?>
+
+                <?php wp_nav_menu(array('theme location' => 'headerMenu')); ?>
+            </div>
+        </div>
+        <!-- Mobile Nav -->
+        <div class="watcher-mobile-nav">
+
+        </div>
+    </nav>

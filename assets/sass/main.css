@@ -1,1 +1,27 @@
-/*# sourceMappingURL=main.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 10rem;
+}
+
+.watcher-navbar .watcher-desktop-nav {
+  margin-right: 140px;
+  margin-left: 140px;
+}
+.watcher-navbar .menu-main-menu-container #menu-main-menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.watcher-navbar .menu-main-menu-container #menu-main-menu li {
+  list-style-type: none;
+}
+.watcher-navbar .menu-main-menu-container #menu-main-menu li a {
+  margin-left: 3rem;
+  text-decoration: none;
+}/*# sourceMappingURL=main.css.map */
