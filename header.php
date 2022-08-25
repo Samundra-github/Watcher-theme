@@ -19,22 +19,62 @@
     <!-- Navigation Menu -->
 
     <nav class="watcher-navbar">
-        <!-- Desktop Nav -->
-        <div class="watcher-desktop-nav">
-            <div class="d-flex justify-content-between align-items-center">
-                <?php
-                if (function_exists('the_custom_logo')) {
-                    the_custom_logo();
-                } else {
-                    echo "Watcher";
-                }
-                ?>
-
-                <?php wp_nav_menu(array('theme location' => 'headerMenu')); ?>
+        <div class="container">
+            <div class="watcher-desktop-nav">
+                <div class="d-flex justify-content-between align-items-center">
+                    <?php
+                    if (function_exists('the_custom_logo')) {
+                        the_custom_logo();
+                    } else {
+                        echo "Watcher";
+                    }
+                    ?>
+    
+                    <?php wp_nav_menu(array('theme location' => 'headerMenu')); ?>
+                </div>
             </div>
         </div>
-        <!-- Mobile Nav -->
+
+        <!-- Mobile Menu -->
         <div class="watcher-mobile-nav">
+            <div class="container">
+                <div class="row d-flex justify-content-between align-items-center">
+                    <div class="sidenav">
+                        <ul class="container">
+                            <?php
+                            wp_nav_menu(array(
+                                'theme_location' => 'headerMenu'
+                            ));
+                            ?>
+                        </ul>
+                    </div>
+
+                    <div class="mobile-navbar">
+                        <?php
+                        if (function_exists('the_custom_logo')) {
+                            the_custom_logo();
+                        } else {
+                            echo "Thrive LDN";
+                        }
+                        ?>
+
+                        <div class="openNav">
+                            <i class="fa fa-xmark"></i>
+                            <i class="fa fa-bars"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </nav>
+
+    <!-- JQuery -->
+    <script>
+        $(document).ready(function() {
+            $(".openNav").click(function() {
+                $(".sidenav").toggleClass("active_nav");
+                $(".openNav").toggleClass("active_nav");
+            });
+        });
+    </script>

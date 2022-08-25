@@ -1,4 +1,3 @@
-
 <?php
 
 
@@ -19,6 +18,7 @@ function watcherldn_theme_setup()
     // Register menus
     register_nav_menus(array(
         'headerMenu'   => __('Primary Menu', 'thriveldn'),
+        'footerMenu'   => __('Secondary Menu', 'thriveldn'),
     ));
 }
 add_action('after_setup_theme', 'watcherldn_theme_setup');
@@ -29,8 +29,6 @@ function watcherldn_theme_scripts()
     wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css');
     wp_enqueue_style('main-css', get_template_directory_uri() . '/assets/sass/main.css');
     wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js');
-    wp_enqueue_script('jquery');
-    wp_register_script('loadmore_script', get_stylesheet_directory_uri() . '/assets/js/ajax.js', array('jquery'));
     wp_localize_script('loadmore_script', 'loadmore_params', array(
         'ajaxurl' => admin_url('admin-ajax.php'),
     ));
@@ -42,4 +40,15 @@ add_action('wp_enqueue_scripts', 'watcherldn_theme_scripts');
 get_template_part('/inc/functions/custom_post_type');
 
 
+// Register Option page 
+if (function_exists('acf_add_options_page')) {
+
+    acf_add_options_page(array(
+        'page_title'     => 'Theme General Settings',
+        'menu_title'    => 'Theme Settings',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'        => false
+    ));
+}
 ?>

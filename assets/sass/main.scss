@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
 @import "color";
 @import "mixin";
 
@@ -10,12 +12,37 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 10rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+
+    &:hover {
+        color: black;
+    }
+}
+
+// Header
+
+// Desktop Nav Start
+
 .watcher-navbar {
+
     .watcher-desktop-nav {
-        margin-right: 140px;
-        margin-left: 140px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid black;
     }
 
     .menu-main-menu-container {
@@ -24,16 +51,216 @@ html {
             display: flex;
             justify-content: space-around;
             align-items: center;
+            margin-bottom: 0;
 
             li {
                 list-style-type: none;
-                
+
                 a {
                     margin-left: 3rem;
                     text-decoration: none;
                 }
             }
-            
+
         }
     }
+}
+
+// Desktop Nav End
+
+// Mobile Nav Start
+
+.watcher-mobile-nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+
+    display: none;
+
+    .sidenav {
+        position: fixed;
+        z-index: 1;
+        right: 0;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 20px;
+        display: none;
+        top: 134px;
+        background-color: white;
+
+        .menu-main-menu-container {
+            text-align: center;
+
+            ul {
+                li {
+                    list-style-type: none;
+
+                    a {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        &.active_nav {
+            display: block;
+        }
+    }
+
+
+    .mobile-navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .openNav {
+        & .fa-xmark {
+            display: none;
+        }
+
+        & .fa-bars {
+            display: block;
+            font-size: 34px;
+        }
+
+        & .sidenav {
+            display: none;
+        }
+
+        &.active_nav {
+            & .fa-xmark {
+                display: block;
+                font-size: 34px;
+            }
+
+            & .fa-bars {
+                display: none;
+            }
+
+            & .sidenav {
+                display: block;
+            }
+        }
+    }
+}
+
+// Mobile Nav End
+
+// Footer Start
+
+.watcher-footer-section {
+    margin-top: 20px;
+
+    .watcher-footer {
+        padding-top: 40px;
+        padding-bottom: 20px;
+        border-top: 2px solid black;
+
+        .watcher-help {
+            display: grid;
+
+            a {
+                text-decoration: none;
+                text-align: end;
+            }
+        }
+
+        .watcher-footer-copyright {
+            margin-top: 10px;
+        }
+    }
+}
+
+// Footer End
+
+// Movies
+
+// Single Movie Start
+
+.movie-single {
+    margin-top: 110px;
+    margin-bottom: 110px;
+
+    .movie-image {
+        text-align: center;
+
+        img {
+            height: 438px;
+            width: 780px;
+            object-fit: contain;
+        }
+    }
+
+    .movie-title {
+        margin-top: 20px;
+    }
+
+    .movie-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}
+
+// Single Movie End
+
+// Media Query
+
+@media (max-width: 768px) {
+    .watcher-desktop-nav {
+        display: none;
+    }
+
+    .watcher-mobile-nav {
+        display: flex;
+    }
+
+    .watcher-footer-section {
+        .watcher-footer {
+            margin-top: 40px;
+
+            .watcher-footer-logo,
+            .watcher-footer-description,
+            .watcher-footer-copyright {
+                text-align: center;
+            }
+
+            .watcher-help {
+                margin-top: 1rem;
+
+                a {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .movie-single {
+        margin-top: 110px;
+        margin-bottom: 110px;
+    
+        .movie-image {
+            text-align: center;
+    
+            img {
+                height: 200px;
+                width: 300px;
+                object-fit: contain;
+            }
+        }
+    
+        .movie-title {
+            margin-top: 20px;
+        }
+    
+        .movie-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+    }
+
 }

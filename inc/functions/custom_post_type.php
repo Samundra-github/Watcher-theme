@@ -60,65 +60,61 @@ add_action( 'init', 'create_movie_cpt', 0 );
 
 // register_taxonomy("categories", array("work"), array("hierarchical" => true, "label" => "Categories", "singular_label" => "Category", "rewrite" => array( 'slug' => 'work', 'with_front'=> false )));
 
-// Register Custom Taxonomy
-function watcherldn_genre_cat() {
+add_action('init', 'register_tax_category');
 
-	$labels = array(
-		'name'                       => _x( 'Genre Categories', 'Taxonomy General Name', 'watcherldn' ),
-		'singular_name'              => _x( 'Genre Category', 'Taxonomy Singular Name', 'watcherldn' ),
-		'menu_name'                  => __( 'Category', 'watcherldn' ),
-		'all_items'                  => __( 'All Items', 'watcherldn' ),
-		'parent_item'                => __( 'Parent Item', 'watcherldn' ),
-		'parent_item_colon'          => __( 'Parent Item:', 'watcherldn' ),
-		'new_item_name'              => __( 'New Item Name', 'watcherldn' ),
-		'add_new_item'               => __( 'Add New Item', 'watcherldn' ),
-		'edit_item'                  => __( 'Edit Item', 'watcherldn' ),
-		'update_item'                => __( 'Update Item', 'watcherldn' ),
-		'view_item'                  => __( 'View Item', 'watcherldn' ),
-		'separate_items_with_commas' => __( 'Separate items with commas', 'watcherldn' ),
-		'add_or_remove_items'        => __( 'Add or remove items', 'watcherldn' ),
-		'choose_from_most_used'      => __( 'Choose from the most used', 'watcherldn' ),
-		'popular_items'              => __( 'Popular Items', 'watcherldn' ),
-		'search_items'               => __( 'Search Items', 'watcherldn' ),
-		'not_found'                  => __( 'Not Found', 'watcherldn' ),
-		'no_terms'                   => __( 'No items', 'watcherldn' ),
-		'items_list'                 => __( 'Items list', 'watcherldn' ),
-		'items_list_navigation'      => __( 'Items list navigation', 'watcherldn' ),
-	);
-	$args = array(
-		'labels'                     => $labels,
-		'hierarchical'               => true,
-		'public'                     => true,
-		'show_ui'                    => true,
-		'show_admin_column'          => true,
-		'show_in_nav_menus'          => true,
-		'show_tagcloud'              => true,
-	);
-	register_taxonomy( 'genre_cat', array( 'genre' ), $args );
-
+function register_tax_category() {
+  register_taxonomy('category', array('post', 'movie', 'music'), array(
+    'labels' => array(
+      'name' => _x('Categories', 'Taxonomy General Name', 'category'),
+      'singular_name' => _x('Category', 'Taxonomy Singular Name', 'category'),
+      'menu_name' => __('Categories', 'category'),
+      'all_items' => __('All Categories', 'category'),
+      'parent_item' => __('Parent Category', 'category'),
+      'parent_item_colon' => __('Parent Category:', 'category'),
+      'new_item_name' => __('New Category', 'category'),
+      'add_new_item' => __('Add New Category', 'category'),
+      'edit_item' => __('Edit Category', 'category'),
+      'update_item' => __('Update Category', 'category'),
+      'view_item' => __('View Category', 'category'),
+      'separate_items_with_commas' => __('Separate Categories with Commas', 'category'),
+      'add_or_remove_items' => __('Add or Remove Categories', 'category'),
+      'choose_from_most_used' => __('Choose from the Most Used Categories', 'category'),
+      'popular_items' => __('Popular Categories', 'category'),
+      'search_items' => __('Search Categories', 'category'),
+      'not_found' => __('Not Found', 'category'),
+      'no_terms' => __('No Categories', 'category'),
+      'items_list' => __('Categories List', 'category'),
+      'items_list_navigation' => __('Categories List Navigation', 'category')
+    ),
+    'hierarchical' => true,
+    'public' => true,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'show_in_nav_menus' => true,
+    'show_tagcloud' => true
+  ));
 }
-add_action( 'init', 'watcherldn_genre_cat', 0 );
 
 
 // Register Custom Post Type Music
 function create_music_cpt() {
 
 	$labels = array(
-		'name' => _x( 'Musics', 'Post Type General Name', 'watcherldn' ),
+		'name' => _x( 'Music', 'Post Type General Name', 'watcherldn' ),
 		'singular_name' => _x( 'Music', 'Post Type Singular Name', 'watcherldn' ),
-		'menu_name' => _x( 'Musics', 'Admin Menu text', 'watcherldn' ),
+		'menu_name' => _x( 'Music', 'Admin Menu text', 'watcherldn' ),
 		'name_admin_bar' => _x( 'Music', 'Add New on Toolbar', 'watcherldn' ),
 		'archives' => __( 'Music Archives', 'watcherldn' ),
 		'attributes' => __( 'Music Attributes', 'watcherldn' ),
 		'parent_item_colon' => __( 'Parent Music:', 'watcherldn' ),
-		'all_items' => __( 'All Musics', 'watcherldn' ),
+		'all_items' => __( 'All Music', 'watcherldn' ),
 		'add_new_item' => __( 'Add New Music', 'watcherldn' ),
 		'add_new' => __( 'Add New', 'watcherldn' ),
 		'new_item' => __( 'New Music', 'watcherldn' ),
 		'edit_item' => __( 'Edit Music', 'watcherldn' ),
 		'update_item' => __( 'Update Music', 'watcherldn' ),
 		'view_item' => __( 'View Music', 'watcherldn' ),
-		'view_items' => __( 'View Musics', 'watcherldn' ),
+		'view_items' => __( 'View Music', 'watcherldn' ),
 		'search_items' => __( 'Search Music', 'watcherldn' ),
 		'not_found' => __( 'Not found', 'watcherldn' ),
 		'not_found_in_trash' => __( 'Not found in Trash', 'watcherldn' ),
@@ -128,9 +124,9 @@ function create_music_cpt() {
 		'use_featured_image' => __( 'Use as featured image', 'watcherldn' ),
 		'insert_into_item' => __( 'Insert into Music', 'watcherldn' ),
 		'uploaded_to_this_item' => __( 'Uploaded to this Music', 'watcherldn' ),
-		'items_list' => __( 'Musics list', 'watcherldn' ),
-		'items_list_navigation' => __( 'Musics list navigation', 'watcherldn' ),
-		'filter_items_list' => __( 'Filter Musics list', 'watcherldn' ),
+		'items_list' => __( 'Music list', 'watcherldn' ),
+		'items_list_navigation' => __( 'Music list navigation', 'watcherldn' ),
+		'filter_items_list' => __( 'Filter Music list', 'watcherldn' ),
 	);
 	$args = array(
 		'label' => __( 'Music', 'watcherldn' ),
