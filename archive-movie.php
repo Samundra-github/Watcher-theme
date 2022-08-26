@@ -1,4 +1,1 @@
-<?php get_header(); ?>
-
-
-<?php get_footer(); ?>
+<?php wp_redirect( home_url() . "/movie" ); exit; ?>
