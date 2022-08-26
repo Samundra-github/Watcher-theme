@@ -127,6 +127,21 @@ a:hover {
   margin-top: 10px;
 }
 
+.page-header {
+  margin-top: 20px;
+}
+.page-header .page-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page-header .page-header-content .page-image {
+  height: 300px;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .movie-single {
   margin-top: 110px;
   margin-bottom: 110px;

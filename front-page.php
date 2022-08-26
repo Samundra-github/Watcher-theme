@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php get_template_part('/component/header', 'section') ?>
+
 
 <?php get_template_part('/component/movies', 'part') ?>
 

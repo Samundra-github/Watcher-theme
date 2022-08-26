@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+<?php get_template_part('/component/page', 'header') ?>
 
 <section class="movie-single">
     <div class="container">
