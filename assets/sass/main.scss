@@ -178,11 +178,14 @@ a {
 
 .page-header {
     margin-top: 20px;
+    padding-bottom: 10px;
 
     .page-header-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        border-bottom: 2px solid black;
+
 
         .page-image {
             height: 300px;
@@ -226,6 +229,27 @@ a {
 }
 
 // Single Movie End
+
+// All Movies Start
+
+.all_movies {
+    padding-top: 50px;
+
+    .form_query h2 {
+        text-decoration: underline;
+        margin-bottom: 30px;
+    }
+
+}
+
+
+// All Movies End
+
+// Login Page Start
+
+
+
+// Login Page Start
 
 // Media Query
 

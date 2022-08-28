@@ -129,11 +129,13 @@ a:hover {
 
 .page-header {
   margin-top: 20px;
+  padding-bottom: 10px;
 }
 .page-header .page-header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid black;
 }
 .page-header .page-header-content .page-image {
   height: 300px;
@@ -162,6 +164,14 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.all_movies {
+  padding-top: 50px;
+}
+.all_movies .form_query h2 {
+  text-decoration: underline;
+  margin-bottom: 30px;
 }
 
 @media (max-width: 768px) {
