@@ -1,1 +1,1 @@
-<?php wp_redirect( home_url() . "/music" ); exit; ?>
+<?php wp_redirect( home_url() . "/musics" ); exit; ?>

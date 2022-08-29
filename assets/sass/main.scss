@@ -147,6 +147,28 @@ a {
 
 // Mobile Nav End
 
+// Logged Out Nav Start
+
+.logged-out-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    li {
+        list-style-type: none;
+
+        a {
+            text-decoration: none;
+            margin-left: 3rem;
+        }
+    }
+
+}
+
+
+// Logged In Nav End
+
+
 // Footer Start
 
 .watcher-footer-section {
@@ -307,5 +329,16 @@ a {
         }
 
     }
+
+    .logged-out-menu {
+        display: block;
+        text-align: center;
+
+        li a {
+            margin-left: 0;
+        }
+
+    }
+
 
 }

@@ -13,7 +13,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-2">
                         <div class="watcher-help">
                             <?php if (have_rows('help', 'option')) : ?>
                                 <?php while (have_rows('help', 'option')) : the_row(); ?>

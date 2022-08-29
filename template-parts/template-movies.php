@@ -46,11 +46,9 @@ get_header();
                     <div>
                         <h5>Search by rating</h5>
                     </div>
-                    <input data-css-form="input" type="text" id="search_query_Movies" class="Movies_query_search query_search" name="resarch_query" placeholder="Ratings">
-                    <!-- <select name="select" id="number"></select> -->
-
-                    <input type="number" min="1" max="10" value="Ratings">
-                    <i class="fa-solid fa-angle-down"></i>
+                    <select name="select" id="number">
+                        <option value="rating">Rating</option>
+                    </select>
                 </fieldset>
 
                 <fieldset class="category mb-3 ">
@@ -90,7 +88,7 @@ get_header();
 
         <?php if ($Movies_list->max_num_pages > 1) { ?>
             <div class="load_more_div text-center mt-3">
-                <a href="#" class="btn-load-more-all btn-load-more-Movies">Load More</a>
+                <a href="#" class="btn-load-more-all btn-load-more-Movies">Load More results</a>
             </div>
         <?php } ?>
     </div>

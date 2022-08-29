@@ -108,6 +108,19 @@ a:hover {
   display: block;
 }
 
+.logged-out-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logged-out-menu li {
+  list-style-type: none;
+}
+.logged-out-menu li a {
+  text-decoration: none;
+  margin-left: 3rem;
+}
+
 .watcher-footer-section {
   margin-top: 20px;
 }
@@ -215,5 +228,12 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .logged-out-menu {
+    display: block;
+    text-align: center;
+  }
+  .logged-out-menu li a {
+    margin-left: 0;
   }
 }/*# sourceMappingURL=main.css.map */
