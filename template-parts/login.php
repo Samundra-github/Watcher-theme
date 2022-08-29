@@ -69,7 +69,7 @@ Template Post Type: page
 
     button:hover {
 
-        opacity: .10;
+        opacity: 1;
 
     }
 
