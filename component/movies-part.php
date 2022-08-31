@@ -1,9 +1,8 @@
+<!-- Component name: Search -->
 
 
-<!-- Movies Section -->
-
-<section class="watcher-movies">
-    <div class="container">
-        
-    </div>
-</section>
+<div class="movie-poster">
+    <?php if (get_field('feature_image')) : ?>
+        <img class="img-fluid" src="<?php the_field('feature_image'); ?>" />
+    <?php endif; ?>
+</div>

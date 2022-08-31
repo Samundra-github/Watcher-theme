@@ -4,8 +4,55 @@
 Template Name: Login
 Template Post Type: page
 */
+global $wpdb;
+
+
 
 ?>
+
+
+<?php
+
+if ($_POST) {
+    $username = $wpdb->escape($_POST['username']);
+    $password = $wpdb->escape($_POST['password']);
+
+    $login_array = array();
+    $login_array['user_login'] = $username;
+    $login_array['user_password'] = $password;
+
+    $verify_user = wp_signon($login_array, true);
+    if (!is_wp_error($verify_user)) {
+        echo "<script>window.location = '" . site_url() . "' </script>";
+    } else {
+        echo "<script>window.location = '" . site_url() . "/login" . "' </script>";
+        echo "<p> Invalid Credentials </p>";
+
+    }
+} else { ?>
+    <form method="post">
+
+        <h2>LOGIN</h2>
+        <p>
+            <label for="username">Username/Email</label>
+            <input type="text" id="username" name="username" placeholder="Enter Username/Email">
+        </p>
+
+        <p>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password">
+        </p>
+
+        <button type="submit">Login</button>
+
+
+        <button class="signup"> <a href="http://localhost:81/watcher/sign-up/">Sign Up</a> </button>
+
+    </form>
+<?php } ?>
+
+
+
 <style>
     form {
         width: auto;
@@ -45,6 +92,7 @@ Template Post Type: page
         border-radius: 5px;
         margin-right: 10px;
         border: none;
+        cursor: pointer;
     }
 
     button:hover {
@@ -65,14 +113,13 @@ Template Post Type: page
         color: rgb(134, 3, 3);
     }
 
+    .signup {
+        float: left;
+    }
+
     a {
-        float: right;
-        background: rgb(183, 225, 233);
-        padding: 10px 15px;
+        float: left;
         color: #fff;
-        border-radius: 10px;
-        margin-right: 10px;
-        border: none;
         text-decoration: none;
     }
 
@@ -80,28 +127,3 @@ Template Post Type: page
         opacity: .7;
     }
 </style>
-
-<form  method="post">
-
-    <h2>LOGIN</h2>
-
-    <?php if (isset($_GET['error'])) { ?>
-
-        <p class="error"><?php echo $_GET['error']; ?></p>
-
-    <?php } ?>
-
-    <label>User Name</label>
-
-    <input type="text" name="uname" placeholder="User Name"><br>
-
-    <label>Password</label>
-
-    <input type="password" name="password" placeholder="Password"><br>
-
-    <button type="submit">Login</button>
-
-
-    <button> <a href="http://localhost:81/watcher/sign-up/">Sign Up</a> </button>
-
-</form>

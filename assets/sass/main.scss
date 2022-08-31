@@ -254,16 +254,183 @@ a {
 
 // All Movies Start
 
+
+
+
 .all_movies {
     padding-top: 50px;
 
-    .form_query h2 {
-        text-decoration: underline;
-        margin-bottom: 30px;
+
+    .form_query {
+
+        h5 {
+            padding-bottom: 10px;
+        }
+
+        .watcher-search {
+            @include search;
+            padding: 0.3rem 0.5rem;
+
+            & input {
+                outline: 0;
+
+                &::placeholder {
+                    color: rgb(192, 192, 192);
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+            }
+
+            &-space {
+                border: none !important;
+            }
+
+            &-icon {
+                border: none;
+
+                & i {
+                    position: absolute;
+                    top: 50px;
+                    right: 0px;
+                    font-size: 14px;
+                }
+            }
+
+        }
+
+        h2 {
+            text-decoration: underline;
+            margin-bottom: 30px;
+        }
     }
 
 }
 
+// Year slider
+
+.slidecontainer {
+    width: 100%;
+
+    p {
+        text-align: center;
+        padding-top: 13px;
+    }
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    background: black;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #E56B6F;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #E56B6F;
+    cursor: pointer;
+}
+
+.fas.fa-search {
+    float: right;
+    font-size: 20px !important;
+}
+
+// Ratings
+
+#number {
+    padding: 0.3rem 15.5rem 0.3rem 0.1rem;
+    @include search;
+}
+
+// Genre
+
+#category {
+    padding: 0.3rem 10.9rem 0.3rem 0.1rem;
+    @include search;
+}
+
+// Production House
+
+input[type="checkbox"]:checked+label::after {
+    content: '';
+    position: absolute;
+    width: 17px;
+    height: 7px;
+    background: rgba(0, 0, 0, 0);
+    top: 0.9ex;
+    left: 0.4ex;
+    border: 3px solid red;
+    border-top: none;
+    border-right: none;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+input[type="checkbox"] {
+    line-height: 2.1ex;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    position: absolute;
+    left: -999em;
+}
+
+input[type="checkbox"]+label {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+input[type="checkbox"]+label::before {
+    content: "";
+    display: inline-block;
+    vertical-align: -30%;
+    height: 24px;
+    width: 24px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 0px;
+    margin-right: 0.5em;
+}
+
+// Image
+
+.movie-poster {
+
+    margin-bottom: 2rem;
+
+    img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+}
 
 // All Movies End
 
