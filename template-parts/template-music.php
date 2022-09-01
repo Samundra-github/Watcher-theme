@@ -10,7 +10,7 @@ get_header();
 
 
 
-<section class="all_music">
+<section class="show-result">
     <?php
     $paged = get_query_var('page') ? get_query_var('page') : 1;
     $music = array(

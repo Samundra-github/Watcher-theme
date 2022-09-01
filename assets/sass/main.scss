@@ -33,6 +33,10 @@ a {
     }
 }
 
+a {
+    outline: none;
+}
+
 // Header
 
 // Desktop Nav Start
@@ -257,7 +261,7 @@ a {
 
 
 
-.all_movies {
+.show-result {
     padding-top: 50px;
 
 
@@ -436,6 +440,11 @@ input[type="checkbox"]+label::before {
 
 // All Music Start
 
+
+.home-showcase {
+    margin-top: 3rem;
+}
+
 .music-poster {
 
     margin-bottom: 2rem;
@@ -449,6 +458,29 @@ input[type="checkbox"]+label::before {
 }
 
 // All Music End
+
+// Front Page Start
+
+.main-page-button button{
+    background-color: white;
+    padding: 0.5rem 3rem;
+    border: 2px solid #355070;
+    border-radius: 6px;
+    a {
+        color: #355070;
+        text-decoration: none;
+    }
+
+    &:hover {
+        background-color: #E56B6F;
+        border: 2px solid #E56B6F;
+        a {
+            color: white;
+        }
+    }
+}
+
+// Front Page End
 
 // Login Page Start
 

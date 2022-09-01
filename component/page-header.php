@@ -1,6 +1,6 @@
 
 <section class="page-header">
-    <div class="container">
+    <div class="container" style="background-color: <?php the_field('background_color'); ?>;">
         <div class="page-header-content">
             <div class="col-md-6">
                 <h1 class="page-header-title"><?php the_field('page_title') ?></h1>
