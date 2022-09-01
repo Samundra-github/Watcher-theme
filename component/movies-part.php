@@ -1,4 +1,4 @@
-<!-- Component name: Search -->
+<!-- Component name: Movies -->
 
 
 <div class="movie-poster">

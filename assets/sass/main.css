@@ -342,6 +342,17 @@ input[type=checkbox] + label::before {
   border-radius: 5px;
 }
 
+.music-poster {
+  margin-bottom: 2rem;
+}
+.music-poster img {
+  height: 200px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+
 @media (max-width: 768px) {
   .watcher-desktop-nav {
     display: none;

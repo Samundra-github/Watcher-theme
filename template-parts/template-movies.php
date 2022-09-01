@@ -28,7 +28,7 @@ get_header();
 
                 <h5>Search by title</h5>
                 <fieldset class="watcher-search" style="max-width: 80%;">
-                    <input type="search" class="watcher-search-space Movies_query_search query_search" placeholder="Search" aria-label="Search" aria-describedby="search-addon">
+                    <input type="search" class="watcher-search-space movies_query_search query_search" placeholder="Search" aria-label="Search" aria-describedby="search-addon">
                     <span class="icon" id="search-addon">
                         <i class="fas fa-search"></i>
                     </span>
@@ -94,29 +94,32 @@ get_header();
             <div class="col-md-1" style="border-left: 2px solid black;"></div>
 
             <div class="col-md-7">
-                <div class="row load_all_Movies">
-                    <?php if ($Movies_list->have_posts()) : ?>
-                        <?php while ($Movies_list->have_posts()) : $Movies_list->the_post(); ?>
-                            <?php get_template_part('/component/movies', 'part') ?>
-                        <?php endwhile; ?>
-                    <?php endif;
-                    wp_reset_postdata(); ?>
+                <div class="load-movie-all">
+                    <div class="row">
+                        <?php if ($Movies_list->have_posts()) : ?>
+                            <?php while ($Movies_list->have_posts()) : $Movies_list->the_post(); ?>
+                                <?php get_template_part('/component/movies', 'part') ?>
+                            <?php endwhile; ?>
+                        <?php endif;
+                        wp_reset_postdata(); ?>
+                        <?php wp_reset_query(); ?>
+                    </div>
                 </div>
             </div>
 
         </div>
 
-        <?php if ($Movies_list->max_num_pages > 1) { ?>
-            <div class="load_more_div text-center mt-3">
-                <a href="#" class="btn-load-more-all btn-load-more-Movies">Load More results</a>
+        <?php if ($Movies_list-> max_num_pages > 1) { ?>
+            <div class="load_more_div text-end mt-3">
+                <a href="#" class="load-more-movie">Load More results</a>
             </div>
         <?php } ?>
     </div>
 </section>
 <script>
-    var limit_Movies = 3,
-        page_Movies = 1,
-        max_pages_latest_Movies = <?php echo $Movies_list->max_num_pages ?>
+    var limit_movie = 3,
+        page_movie = 1,
+        max_pages_latest_movie = <?php echo $Movies_list->max_num_pages ?>
 </script>
 
 <script>
