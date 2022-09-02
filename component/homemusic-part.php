@@ -10,13 +10,13 @@
     $music_list = new WP_Query($music);
     ?>
     <div class="container">
-        <h2>Discover All Songs</h2>
+        <h2 class="mb-3">Discover All Songs</h2>
         <div class="form_query">
             <div class="row">
                 <?php if ($music_list->have_posts()) : ?>
                     <?php while ($music_list->have_posts()) : $music_list->the_post(); ?>
                         <div class="col-md-4">
-                            <div class="music-poster">
+                            <div class="poster">
                                 <?php if (get_field('feature_image')) : ?>
                                     <img class="img-fluid" src="<?php the_field('feature_image'); ?>" />
                                 <?php endif; ?>

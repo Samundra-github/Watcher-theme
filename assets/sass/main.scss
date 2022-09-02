@@ -151,7 +151,7 @@ a {
 
 // Mobile Nav End
 
-// Logged Out Nav Start
+// Logged Out
 
 .logged-out-menu {
     display: flex;
@@ -169,8 +169,36 @@ a {
 
 }
 
+// Body
 
-// Logged In Nav End
+.home-showcase {
+    margin-top: 3rem;
+    .form_query {
+        .main-page-button {
+            margin-bottom: 3rem;
+            button {
+                background-color: white;
+                border-radius: 6px;
+                border: 2px solid  #355070;
+                padding: 0.4rem 3rem;
+
+                a {
+                    text-decoration: none;
+                    color: #355070;
+                }
+
+                &:hover {
+                    background-color: #E56B6F;
+                    border: 2px solid #E56B6F;
+
+                    a {
+                       color: white; 
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 // Footer Start
@@ -257,9 +285,6 @@ a {
 // Single Movie End
 
 // All Movies Start
-
-
-
 
 .show-result {
     padding-top: 50px;
@@ -424,10 +449,8 @@ input[type="checkbox"]+label::before {
 
 // Image
 
-.movie-poster {
-
-    margin-bottom: 2rem;
-
+.poster {
+    
     img {
         height: 200px;
         width: 100%;
@@ -438,55 +461,12 @@ input[type="checkbox"]+label::before {
 
 // All Movies End
 
-// All Music Start
-
-
-.home-showcase {
-    margin-top: 3rem;
-}
-
-.music-poster {
-
-    margin-bottom: 2rem;
-
-    img {
-        height: 200px;
-        width: 100%;
-        object-fit: cover;
-        border-radius: 5px;
-    }
-}
-
-// All Music End
-
-// Front Page Start
-
-.main-page-button button{
-    background-color: white;
-    padding: 0.5rem 3rem;
-    border: 2px solid #355070;
-    border-radius: 6px;
-    a {
-        color: #355070;
-        text-decoration: none;
-    }
-
-    &:hover {
-        background-color: #E56B6F;
-        border: 2px solid #E56B6F;
-        a {
-            color: white;
-        }
-    }
-}
-
-// Front Page End
-
-// Login Page Start
+// Wishlist Start
 
 
 
-// Login Page Start
+// Wishlist End 
+
 
 // Media Query
 

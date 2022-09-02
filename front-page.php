@@ -23,9 +23,7 @@ if (!$user_ID) {
 <?php get_template_part('/component/homemusic', 'part') ?>
 
 <?php get_footer(); ?>
-    <?php
-
-}
-
-    ?>
+    
+    
+<?php } ?>
 

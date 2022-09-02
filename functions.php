@@ -20,6 +20,10 @@ function watcherldn_theme_setup()
         'headerMenu'   => __('Primary Menu', 'thriveldn'),
         'footerMenu'   => __('Secondary Menu', 'thriveldn'),
     ));
+
+    // Woocommerce Support
+    add_theme_support( "woocommerce" );
+
 }
 add_action('after_setup_theme', 'watcherldn_theme_setup');
 
@@ -30,6 +34,7 @@ function watcherldn_theme_scripts()
     wp_enqueue_style('main-css', get_template_directory_uri() . '/assets/sass/main.css');
     wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js');
     wp_register_script('loadmore_script', get_stylesheet_directory_uri() . '/assets/js/ajax.js', array('jquery'));
+    wp_register_script('loadmore_script', get_stylesheet_directory_uri() . '/assets/js/wishlist.js', array('jquery'));
     wp_localize_script( 'loadmore_script', 'loadmore_params', array(
 		'ajaxurl' => admin_url('admin-ajax.php'),
 	) );
@@ -85,3 +90,4 @@ add_action("wp_logout", "redirect_to_login_page");
 //     }
 // }
 // add_action("init", "redirect_wp_admin");
+ 

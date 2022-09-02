@@ -28,7 +28,7 @@ get_header();
 
                 <h5>Search by title</h5>
                 <fieldset class="watcher-search" style="max-width: 80%;">
-                    <input type="search" class="watcher-search-space musics_query_search query_search" placeholder="Search" aria-label="Search" aria-describedby="search-addon">
+                    <input type="search" class="watcher-search-space music_query_search query_search" placeholder="Search" aria-label="Search" aria-describedby="search-addon">
                     <span class="icon" id="search-addon">
                         <i class="fas fa-search"></i>
                     </span>
@@ -109,7 +109,7 @@ get_header();
 
         </div>
 
-        <?php if ($music_list-> max_num_pages > 1) { ?>
+        <?php if ($music_list->max_num_pages > 1) { ?>
             <div class="load_more_div text-end mt-3">
                 <a href="#" class="load-more-music">Load More results</a>
             </div>

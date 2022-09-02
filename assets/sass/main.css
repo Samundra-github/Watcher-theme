@@ -125,6 +125,30 @@ a {
   margin-left: 3rem;
 }
 
+.home-showcase {
+  margin-top: 3rem;
+}
+.home-showcase .form_query .main-page-button {
+  margin-bottom: 3rem;
+}
+.home-showcase .form_query .main-page-button button {
+  background-color: white;
+  border-radius: 6px;
+  border: 2px solid #355070;
+  padding: 0.4rem 3rem;
+}
+.home-showcase .form_query .main-page-button button a {
+  text-decoration: none;
+  color: #355070;
+}
+.home-showcase .form_query .main-page-button button:hover {
+  background-color: #E56B6F;
+  border: 2px solid #E56B6F;
+}
+.home-showcase .form_query .main-page-button button:hover a {
+  color: white;
+}
+
 .watcher-footer-section {
   margin-top: 20px;
 }
@@ -335,48 +359,12 @@ input[type=checkbox] + label::before {
   margin-right: 0.5em;
 }
 
-.movie-poster {
-  margin-bottom: 2rem;
-}
-.movie-poster img {
+.poster img {
   height: 200px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;
-}
-
-.home-showcase {
-  margin-top: 3rem;
-}
-
-.music-poster {
-  margin-bottom: 2rem;
-}
-.music-poster img {
-  height: 200px;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 5px;
-}
-
-.main-page-button button {
-  background-color: white;
-  padding: 0.5rem 3rem;
-  border: 2px solid #355070;
-  border-radius: 6px;
-}
-.main-page-button button a {
-  color: #355070;
-  text-decoration: none;
-}
-.main-page-button button:hover {
-  background-color: #E56B6F;
-  border: 2px solid #E56B6F;
-}
-.main-page-button button:hover a {
-  color: white;
 }
 
 @media (max-width: 768px) {

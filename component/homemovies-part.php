@@ -10,13 +10,19 @@
     $movie_list = new WP_Query($movie);
     ?>
     <div class="container">
-        <h2>Discover All Movies</h2>
+        <h2 class="mb-3">Discover All Movies</h2>
         <div class="form_query">
             <div class="row">
                 <?php if ($movie_list->have_posts()) : ?>
                     <?php while ($movie_list->have_posts()) : $movie_list->the_post(); ?>
                         <div class="col-md-4">
-                            <?php get_template_part('/component/movies', 'part') ?>
+                            <div class="poster">
+                                <?php if (get_field('feature_image')) : ?>
+                                    <a style="border: none;" href="<?php the_permalink(); ?>">
+                                        <img class="img-fluid" src="<?php the_field('feature_image'); ?>" />
+                                    </a>
+                                <?php endif; ?>
+                            </div>
                         </div>
                     <?php endwhile; ?>
                 <?php endif;
@@ -32,5 +38,3 @@
 
     </div>
 </section>
-
-

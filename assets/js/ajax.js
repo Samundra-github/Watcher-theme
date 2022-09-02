@@ -29,6 +29,27 @@ $(function ($) {
     });
 });
 
+// Search Movies
+
+$(function ($) {
+    $(".movies_query_search").on("input", function (e) {
+        e.preventDefault();
+        var data = {
+            action: "loadmore_search",
+            form: $(this).val(),
+        };
+        console.log(data);
+        $.ajax({
+            url: loadmore_params.ajaxurl,
+            data: data,
+            type: "POST",
+            success: function (data) {
+                $(".load-movie-all").html(data);
+            },
+        });
+    });
+});
+
 
 // Load Music
 
@@ -60,3 +81,26 @@ $(function ($) {
         });
     });
 });
+
+
+// Search Music
+
+$(function ($) {
+    $(".music_query_search").on("input", function (e) {
+        e.preventDefault();
+        var data = {
+            action: "loadmore_search_music",
+            form: $(this).val(),
+        };
+        console.log(data);
+        $.ajax({
+            url: loadmore_params.ajaxurl,
+            data: data,
+            type: "POST",
+            success: function (data) {
+                $(".load-music-all").html(data);
+            },
+        });
+    });
+});
+
