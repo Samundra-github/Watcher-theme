@@ -1,18 +1,16 @@
 <?php
 /*
-Template Name: Music
+Template Name: My Account
 Template Post Type: page
 */
 get_header();
 ?>
 
 <section class="container content-section">
-    <h2 class="section-header">CART</h2>
-    <div class="cart-row">
-        <span class="cart-item cart-header cart-column">ITEM</span>
-    </div>
+    <h2 class="section-header">Your Wishlist</h2>
+    
     <div class="cart-items">
-
+        
     </div>
 </section>
 

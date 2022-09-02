@@ -116,6 +116,7 @@ get_header();
         <?php } ?>
     </div>
 </section>
+
 <script>
     var limit_music = 3,
         page_music = 1,
