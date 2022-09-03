@@ -24,7 +24,7 @@ get_header();
     <div class="container">
         <div class="form_query row">
             <h2>Filter results</h2>
-            <div class="col-md-4">
+            <div class="col-lg-4">
 
                 <h5>Search by title</h5>
                 <fieldset class="watcher-search" style="max-width: 80%;">
@@ -91,9 +91,9 @@ get_header();
 
             </div>
 
-            <div class="col-md-1" style="border-left: 2px solid black;"></div>
+            <div class="col-lg-1" style="border-left: 2px solid black;"></div>
 
-            <div class="col-md-7">
+            <div class="col-lg-7">
                 <div class="load-music-all">
                     <div class="row">
                         <?php if ($music_list->have_posts()) : ?>
