@@ -42,8 +42,8 @@ get_header();
 
                 <h5>Search by rating</h5>
                 <fieldset class="rating mb-3" style="max-width: 80%;">
-                    <select name="select" id="number">
-                        <option value="rating">Rating</option>
+                    <select name="rating" id="number">
+                        <option>Rating</option>
                         <option value="poor">Below 5</option>
                         <option value="average">5-7</option>
                         <option value="very_good">7-8.5</option>
@@ -117,6 +117,14 @@ get_header();
     </div>
 </section>
 
+<section method="get" class="container content-section">
+    <h2 class="section-header">Your Wishlist</h2>
+
+    <div class="cart-items">
+
+    </div>
+</section>
+
 <script>
     var limit_music = 3,
         page_music = 1,
@@ -130,6 +138,47 @@ get_header();
 
     slider.oninput = function() {
         output.innerHTML = this.value;
+    }
+</script>
+
+
+<script>
+    // Add to cart
+
+    if (document.readyState == 'loading') {
+        document.addEventListener('DOMContentLoaded', ready)
+    } else {
+        ready()
+    }
+
+    function ready() {
+        let addToCartButtons = document.getElementsByClassName('wishlist-item-button')
+        for (let i = 0; i < addToCartButtons.length; i++) {
+            let button = addToCartButtons[i]
+            button.addEventListener('click', addToCartClicked)
+        }
+    }
+
+    function addToCartClicked(event) {
+        let button = event.target
+        let wishlistItem = button.parentElement.parentElement
+        let imageSrc = wishlistItem.getElementsByClassName('wishlist-item-image')[0].src
+        console.log(imageSrc)
+        addItemToCart(imageSrc)
+
+    }
+
+    function addItemToCart(imageSrc) {
+        let cartRow = document.createElement('div')
+        let cartItem = document.getElementsByClassName('cart-items')[0]
+        let cartRowContent = `
+            <div class="cart-row">
+                <div class="cart-item cart-column">
+                    <img src="${imageSrc}" alt="List" width="100" height="100">
+                </div>
+            </div>
+    `
+        cartItem.append(cartRow)
     }
 </script>
 

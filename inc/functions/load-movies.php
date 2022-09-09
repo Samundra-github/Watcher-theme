@@ -38,15 +38,50 @@ add_action('wp_ajax_nopriv_loadmore_movie_queried', 'watcherldn_loadmore_movie_q
 function watcherldn_loadmore_search_ajax_handler()
 {
     $form_search =  $_POST['form'];
+
+    $form_movies = $form_search[0];
+    $form_date = $form_search[1];
+    $form_rating = $form_search[2];
+    $form_category = $form_search[3];
+    $taxonomies = get_object_taxonomies('movie', 'objects');
+    $form_production = $form_search[4];
+
+
     $search = array(
         'post_type'      => 'movie',
         'posts_per_page' => 3,
         'paged' => 1,
 
     );
-    if (!empty($form_search)) {
-        $search['s'] = $form_search;
+
+    if (!empty($form_movies)) {
+        $search['s'] = $form_movies;
     }
+
+    if (!empty($form_date)) {
+
+        $search['release_date'] = $form_date;
+    }
+
+    if (!empty($form_rating)) {
+        
+        $search['meta_query'] = array(
+            array(
+                'key' => 'user_rating',
+                'compare' => '=',
+                'type' => 'VARCHAR'
+            )
+        );
+    }
+
+    if (!empty($form_category)) {
+        $search['category'] = $taxonomies;
+    }
+
+    if (!empty($form_production)) {
+        $search['production_company'] = $form_production;
+    }
+
     $search_list = new WP_Query($search);
 
 ?>

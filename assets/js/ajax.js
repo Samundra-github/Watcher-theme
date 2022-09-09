@@ -32,11 +32,11 @@ $(function ($) {
 // Search Movies
 
 $(function ($) {
-    $(".movies_query_search").on("input", function (e) {
+    $(".submit").on("click", function (e) {
         e.preventDefault();
         var data = {
             action: "loadmore_search",
-            form: $(this).val(),
+            form: $(".movie").serializeArray(),
         };
         console.log(data);
         $.ajax({
@@ -106,13 +106,15 @@ $(function ($) {
 
 
 // Add to Cart Music
-$(document).ready(function() {
-    $('#send').submit(function(e) {
+
+
+$(document).ready(function () {
+    $('#send').submit(function (e) {
         $.ajax({
             type: "POST",
-            url:"",
+            url: "",
             data: $('#send').serialize(),
-            success: function(data) {
+            success: function (data) {
                 console.log(data);
             }
         })
