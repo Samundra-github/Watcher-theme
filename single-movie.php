@@ -29,7 +29,7 @@
             <div class="movie-details">
                 <div class="col-md-6">
                     <h5 class="movie-release">
-                        Release Date : <?php the_field('release_date'); ?>
+                        Release Date : <?php the_field('date'); ?>
                     </h5>
 
                     <h5 class="movie-rating">

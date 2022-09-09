@@ -39,12 +39,12 @@ function watcherldn_loadmore_search_ajax_handler()
 {
     $form_search =  $_POST['form'];
 
-    $form_movies = $form_search[0];
-    $form_date = $form_search[1];
-    $form_rating = $form_search[2];
-    $form_category = $form_search[3];
-    $taxonomies = get_object_taxonomies('movie', 'objects');
-    $form_production = $form_search[4];
+    $form_movies = $form_search[0]['value'];
+    $form_date = $form_search[1]['value'];
+    echo $form_date;
+    $form_rating = $form_search[2]['value'];
+    $form_category = $form_search[3]['value'];
+    $form_production = $form_search[4]['value'];
 
 
     $search = array(
@@ -58,29 +58,25 @@ function watcherldn_loadmore_search_ajax_handler()
         $search['s'] = $form_movies;
     }
 
+
     if (!empty($form_date)) {
+        // echo $form_date;
 
-        $search['release_date'] = $form_date;
-    }
-
-    if (!empty($form_rating)) {
-        
         $search['meta_query'] = array(
             array(
-                'key' => 'user_rating',
-                'compare' => '=',
-                'type' => 'VARCHAR'
+                'key'	 	=> 'date',
+                'value'	  	=> $form_date,
+                'compare' 	=> '=',
             )
         );
     }
 
     if (!empty($form_category)) {
-        $search['category'] = $taxonomies;
+        $search['category'] = $form_category;
+
     }
 
-    if (!empty($form_production)) {
-        $search['production_company'] = $form_production;
-    }
+    
 
     $search_list = new WP_Query($search);
 

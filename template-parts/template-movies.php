@@ -45,9 +45,9 @@ get_header();
                     <fieldset class="rating mb-3" style="max-width: 80%;">
                         <select name="rating" id="number">
                             <option>Rating</option>
-                            <option value="poor">Below 5</option>
-                            <option value="average">5-7</option>
-                            <option value="very_good">7-8.5</option>
+                            <option value="5">Below 5</option>
+                            <option value="7">5-7</option>
+                            <option value="8.5">7-8.5</option>
                         </select>
                     </fieldset>
 
